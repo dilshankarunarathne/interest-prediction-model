@@ -5,7 +5,7 @@ from tensorflow.python.keras.models import load_model
 # Load the model
 model = load_model('model.h5')
 
-# Load the input data (replace with your actual input data)
+# Load the input data
 df = pd.read_csv('generated_dataset.csv')
 
 # Define a range of threshold values
