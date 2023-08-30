@@ -22,4 +22,5 @@ setup(
     author_email="ceo@altier.tech",
     description="A simple ad topic recommender",
     license="GNU GPLv3",
+    keywords="ad topic recommender",
 )
