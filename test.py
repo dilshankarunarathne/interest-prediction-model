@@ -8,7 +8,7 @@ from tensorflow.keras.models import load_model
 df = pd.read_csv('generated_dataset.csv')
 
 # Load your trained Keras model
-model = load_model('model.h5')
+model = load_model('model_revised.h5')
 
 
 # Define a function to recommend a topic for a user
