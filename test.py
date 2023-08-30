@@ -15,7 +15,7 @@ else:
 
     label_encoder = LabelEncoder()
     label_encoder.classes_ = ['art', 'books', 'business', 'fashion', 'food', 'movies', 'music', 'science', 'sports',
-                              'technology', 'travel', 'gaming']
+                              'technology', 'travel', 'video games']
 
 
 # Function to recommend a topic based on user's age and gender
@@ -23,11 +23,9 @@ def recommend_topic(user_age, user_gender):
     # Encode the gender input (assuming label_encoder was used during training)
     user_gender_encoded = label_encoder.transform([user_gender])
 
-    # Suppress the UserWarning
-    with warnings.catch_warnings():
+    # Predict the liked topic for the user by passing input as a dictionary
+    with warnings.catch_warnings():  # Suppress warnings temporarily
         warnings.simplefilter("ignore")
-
-        # Predict the liked topic for the user by passing input as a dictionary
         predicted_topic = model.predict({"UserAge": [user_age], "UserGender": [user_gender_encoded[0]]})
 
     # Convert the predicted label back to the original category, or use the predicted label directly
