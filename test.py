@@ -29,7 +29,7 @@ def recommend_topic(model, user_age, user_gender):
     # Use the model to predict topic scores
     topic_scores = model.predict([user_age_input, user_gender_input, dummy_topics])
 
-    # Get the recommended topic based on the highest score
+    # Get the recommended topic index based on the highest score
     recommended_topic_index = np.argmax(topic_scores)
     recommended_topic = topics[recommended_topic_index]
 
