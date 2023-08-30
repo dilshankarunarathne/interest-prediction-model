@@ -5,7 +5,7 @@ setup(
     version="0.1",
     packages=find_packages(),
     package_data={
-        "": ["*.joblib"],
+        "ad_recommender_model": ["model.joblib", "label_encoder.joblib"],
     },
     install_requires=[
         "joblib~=1.3.2",
