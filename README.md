@@ -56,8 +56,9 @@ gender = "male"
 
 topic = recommend_topic(age, gender)
 print(f"Recommended topic for a {age}-year-old {gender}: {topic}")
-
 ```
+
+
 
 
 
