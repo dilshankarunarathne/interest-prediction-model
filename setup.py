@@ -17,4 +17,5 @@ setup(
         "console_scripts": [
             "ad_topic_recommender=ad_topic_recommender.cli:main",
         ]
+    },
 )
