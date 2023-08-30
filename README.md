@@ -87,9 +87,7 @@ Make sure these dependencies are installed in your environment.
 
 If you'd like to contribute to this project, please check the contribution guidelines for more information.
 
-
-
-
+## License
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
