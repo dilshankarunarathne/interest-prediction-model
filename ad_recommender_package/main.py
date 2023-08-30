@@ -12,7 +12,7 @@ label_encoder = joblib.load(label_encoder_file_path)
 
 def recommend_topic(age, gender):
     """
-    This method 
+    Suggests a topic of interest based on age and gender.
     :param age: age of the user
     :param gender: gender of the user
     :return: recommended topic
