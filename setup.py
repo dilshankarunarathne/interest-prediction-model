@@ -15,7 +15,7 @@ setup(
     python_requires=">=3.6",
     entry_points={
         "console_scripts": [
-            "ad_topic_recommender=ad_topic_recommender.cli:main",
+            "ad_topic_recommender=ad_topic_recommender:main",
         ]
     },
 )
