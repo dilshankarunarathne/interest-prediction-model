@@ -13,9 +13,17 @@ label_encoder = joblib.load(label_encoder_file_path)
 def recommend_topic(age, gender):
     """
     Suggests a topic of interest based on age and gender.
-    :param age: age of the user
-    :param gender: gender of the user
-    :return: recommended topic
+
+    :argument:
+        :param age: age of the user
+        :param gender: gender of the user
+
+    :returns:
+        :return: recommended topic
+
+    :raises:
+        ValueError: If age is negative.
+        ValueError: If gender is not 'F' or 'M'.
     """
     user_gender_encoded = label_encoder.transform([gender])
 
