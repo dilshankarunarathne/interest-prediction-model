@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.layers import Input, Embedding, Concatenate, Flatten, Dense
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.text import Tokenizer
