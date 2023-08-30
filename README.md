@@ -44,7 +44,9 @@ ad_topic_recommender --age <age> --gender <gender>
 Replace <age> with the person's age and <gender> with their gender (e.g., "male" or "female"). 
 The CLI will then print out a recommended topic.
 
+### Python Library
 
+You can also use the package as a Python library in your own projects. Here's an example of how to use it:
 
 
 
