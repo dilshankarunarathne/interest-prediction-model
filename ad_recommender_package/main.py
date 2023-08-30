@@ -11,6 +11,12 @@ label_encoder = joblib.load(label_encoder_file_path)
 
 
 def recommend_topic(age, gender):
+    """
+
+    :param age: age of the user
+    :param gender:
+    :return:
+    """
     user_gender_encoded = label_encoder.transform([gender])
 
     input_data = np.array([[age, user_gender_encoded[0]]], dtype=float)
