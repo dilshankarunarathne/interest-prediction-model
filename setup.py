@@ -13,5 +13,6 @@ setup(
         "tensorflow~=2.13.0"
     ],
     python_requires=">=3.6",
-    
+    entry_points={
+        "console_scripts": [
 )
