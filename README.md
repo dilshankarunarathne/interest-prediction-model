@@ -27,4 +27,8 @@ person's age and gender. The model utilizes a Decision Tree Classifier to make t
 The following sections detail the dataset used, data preprocessing, model development, results, and conclusions.
 
 ## Dataset
+The dataset used for training and evaluating the recommendation model is stored in 'generated_dataset.csv.' It contains the following columns:
 
+- `UserAge`: Represents the age of the users.
+- `UserGender`: Categorizes users by gender (encoded numerically).
+- `LikedTopic`: Indicates the topic of interest that users have expressed.
