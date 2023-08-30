@@ -70,6 +70,19 @@ topic = recommend_topic(age, gender)
 print(f"Recommended topic for a {age}-year-old {gender}: {topic}")
 ```
 
+## Dependencies
+
+The package has the following dependencies:
+
+- joblib~=1.3.2
+- numpy~=1.24.2
+- setuptools~=65.5.0
+- scikit-learn~=1.3.0
+- pandas~=2.0.3
+- tensorflow~=2.13.0
+
+Make sure these dependencies are installed in your environment.
+
 
 
 
