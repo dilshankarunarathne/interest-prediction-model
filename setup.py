@@ -18,4 +18,5 @@ setup(
             "ad_topic_recommender=ad_topic_recommender:main",
         ]
     },
+    author="Dilshan M. Karunarathne",
 )
