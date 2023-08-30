@@ -5,10 +5,9 @@ import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 model_file_path = os.path.join(current_dir, '..', 'ad_recommender_model', 'model.joblib')
-
-
+label_encoder_file_path = os.path.join(current_dir, '..', 'ad_recommender_model', 'label_encoder.joblib')
 model = joblib.load(model_file_path)
-label_encoder = joblib.load('label_encoder.joblib')
+label_encoder = joblib.load(label_encoder_file_path)
 
 
 # Function to recommend a topic based on user's age and gender
