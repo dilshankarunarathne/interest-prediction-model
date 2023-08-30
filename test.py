@@ -11,6 +11,13 @@ df = pd.read_csv('generated_dataset.csv')
 model = load_model('model.h5')
 
 
+def format_topic(recommended_topic):
+    # Remove leading and trailing whitespace
+    formatted_topic = recommended_topic.strip()
+
+    return formatted_topic
+
+
 # Define a function to recommend a topic for a user
 def recommend_topic(model, user_age, user_gender):
     # Ensure user_age is an integer
