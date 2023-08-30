@@ -9,6 +9,9 @@ label_encoder = joblib.load('label_encoder.joblib')  # If you saved it during tr
 
 # Function to recommend a topic based on user's age and gender
 def recommend_topic(user_age, user_gender):
+    # Reshape user_gender to (1, 1)
+    user_gender = user_gender.reshape(1, 1)
+
     # Predict the liked topic for the user
     predicted_topic = model.predict([[user_age, user_gender]])
 
