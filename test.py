@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 # Load your dataset
 df = pd.read_csv('generated_dataset.csv')
 
-# Load your trained Keras model 
+# Load your trained Keras model
 model = load_model('model.h5')
 
 
