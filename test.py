@@ -4,7 +4,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
 
-# Load your dataset 
+# Load your dataset
 df = pd.read_csv('generated_dataset.csv')
 
 # Ensure User Age is numeric
@@ -20,7 +20,7 @@ tokenizer.fit_on_texts(df['LikedTopic'])
 topics_seq = tokenizer.texts_to_sequences(df['LikedTopic'])
 topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
 
-# Load your trained Keras model (replace 'model.h5' with the path to your actual model file)
+# Load your trained Keras model 
 model = load_model('model.h5')
 
 # Define input data for making predictions
