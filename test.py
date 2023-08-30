@@ -1,11 +1,22 @@
 import numpy as np
 
-# Define a list of 50 topics
-topics = ['Topic' + str(i) for i in range(1, 51)]
+# Load your dataset and model (replace with your actual dataset and model loading code)
 
-# Generate random scores for each topic (between 0 and 1)
-topic_scores = {topic: np.random.rand(5) for topic in topics}
+# Define a range of threshold values
+threshold_values = np.arange(0.1, 1.1, 0.1)
 
-# Print the generated topic scores
-for topic, scores in topic_scores.items():
-    print(f'{topic}: {scores}')
+# Initialize an empty dictionary to store results (threshold value => recommended topics)
+threshold_to_topics = {}
+
+# Iterate through threshold values
+for threshold in threshold_values:
+    # Apply the threshold to the model's output (replace with your actual model prediction code)
+    predicted_scores = model.predict(input_data)  # Replace input_data with actual input
+    recommended_topics = [topic for topic, score in topic_scores.items() if score >= threshold]
+
+    # Store the threshold value and recommended topics
+    threshold_to_topics[threshold] = recommended_topics
+
+# Print the results
+for threshold, topics in threshold_to_topics.items():
+    print(f'Threshold: {threshold}, Recommended Topics: {topics}')
