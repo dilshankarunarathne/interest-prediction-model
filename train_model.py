@@ -24,7 +24,7 @@ topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
 X_age = df['UserAge'].values
 X_gender = df['UserGender'].values
 X_topics = topics_pad
-y = to_categorical(df['TopicClass'])  # Assuming you have a 'TopicClass' column
+y = to_categorical(df['LikedTopic'])  # Assuming you have a 'TopicClass' column
 
 # Split the data into train and test sets
 X_age_train, X_age_test, X_gender_train, X_gender_test, X_topics_train, X_topics_test, y_train, y_test = train_test_split(
