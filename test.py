@@ -31,9 +31,9 @@ def recommend_topic(model, user_age, user_gender):
 
     # Get the recommended topic index based on the highest score
     recommended_topic_index = np.argmax(topic_scores)
-    recommended_topic = topics[recommended_topic_index]
+    recommended_topic_data = topics[recommended_topic_index]
 
-    return recommended_topic
+    return recommended_topic_data
 
 
 # Example usage:
