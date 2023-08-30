@@ -18,12 +18,18 @@ else:
 
 
 # Function to recommend a topic based on user's age and gender
-def recommend_topic(age, gender):
+def recommend_topic(user_age, user_gender):
     # Encode the gender input (assuming label_encoder was used during training)
-    user_gender_encoded = label_encoder.transform([gender])
+    user_gender_encoded = label_encoder.transform([user_gender])
+
+    # Get the feature names from the label encoder
+    feature_names = label_encoder.get_feature_names(['UserAge', 'UserGender'])
+
+    # Create a dictionary with feature names and values
+    user_data = dict(zip(feature_names, [user_age, user_gender_encoded[0]]))
 
     # Predict the liked topic for the user
-    predicted_topic = model.predict([[age, user_gender_encoded[0]]])
+    predicted_topic = model.predict([user_data])
 
     # Convert the predicted label back to the original category, or use the predicted label directly
     if predicted_topic[0] in label_encoder.classes_:
