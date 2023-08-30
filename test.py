@@ -35,9 +35,9 @@ def recommend_topics(user_age, user_gender):
     threshold = 0.5
 
     # Get recommended topics based on the threshold
-    recommended_topics = [topic for i, topic in enumerate(df['LikedTopic']) if predicted_scores[i][0] >= threshold]
+    recommended_topics_list = [topic for i, topic in enumerate(df['LikedTopic']) if predicted_scores[i][0] >= threshold]
 
-    return recommended_topics
+    return recommended_topics_list
 
 
 # Example usage:
