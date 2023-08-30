@@ -9,5 +9,6 @@ setup(
         "numpy~=1.24.2",
         "setuptools~=65.5.0",
         "scikit-learn~=1.3.0",
+        "pandas~=2.0.3",
     ],
 )
