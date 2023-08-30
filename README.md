@@ -33,7 +33,7 @@ pip install ad-topic-recommender
 
 ## Usage
 
-Command Line Interface
+###Command Line Interface
 The package provides a command-line interface (CLI) for easy topic recommendations. You can use it as follows:
 
 
