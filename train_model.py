@@ -5,7 +5,7 @@ from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import Sequential, Model
-from tensorflow.keras.layers import Embedding, LSTM, Dense, Input
+from tensorflow.keras.layers import Embedding, LSTM, Dense, Input, concatenate
 from tensorflow.keras.utils import to_categorical
 
 # Load your dataset
