@@ -4,10 +4,10 @@ import numpy as np
 import os
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-model_file_path = os.path.join(current_dir, '..', 'my_model', 'model.joblib')
+model_file_path = os.path.join(current_dir, '..', 'ad_recommender_model', 'model.joblib')
 
 
-model = joblib.load('')
+model = joblib.load(model_file_path)
 label_encoder = joblib.load('label_encoder.joblib')
 
 
