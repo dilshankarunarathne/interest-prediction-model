@@ -7,6 +7,7 @@ setup(
     install_requires=[
         "joblib~=1.3.2",
         "numpy~=1.24.2",
+        "setuptools~=65.5.0",
         
     ],
 )
