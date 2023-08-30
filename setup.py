@@ -19,4 +19,5 @@ setup(
         ]
     },
     author="Dilshan M. Karunarathne",
+    author_email="ceo@altier.tech",
 )
