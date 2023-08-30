@@ -62,6 +62,16 @@ print(f"Recommended topic for a {age}-year-old {gender}: {topic}")
 
 Here's an example of how to use the ad_topic_recommender package in a Python script:
 
+```python
+from ad_topic_recommender import recommend_topic
+
+age = 25
+gender = "female"
+
+topic = recommend_topic(age, gender)
+print(f"Recommended topic for a {age}-year-old {gender}: {topic}")
+```
+
 
 
 
