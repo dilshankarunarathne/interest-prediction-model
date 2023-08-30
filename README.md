@@ -48,6 +48,16 @@ The CLI will then print out a recommended topic.
 
 You can also use the package as a Python library in your own projects. Here's an example of how to use it:
 
+```python
+from ad_topic_recommender import recommend_topic
+
+age = 30
+gender = "male"
+
+topic = recommend_topic(age, gender)
+print(f"Recommended topic for a {age}-year-old {gender}: {topic}")
+
+```
 
 
 
