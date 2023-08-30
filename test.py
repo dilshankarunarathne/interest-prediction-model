@@ -1,13 +1,32 @@
 import numpy as np
 import pandas as pd
-from tensorflow.python.keras.models import load_model
+from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
+from tensorflow.keras.models import load_model
 
-# Load the model
-model = load_model('model.h5')
+# Load your dataset (replace 'your_dataset.csv' with your actual dataset)
+df = pd.read_csv('your_dataset.csv')
 
-# Load the input data
-df = pd.read_csv('generated_dataset.csv')
-input_data = df.values
+# Preprocess the data
+max_topics_length = 50
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(df['LikedTopics'])
+topics_seq = tokenizer.texts_to_sequences(df['LikedTopics'])
+topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
+
+# Encode UserGender
+encoder = LabelEncoder()
+df['UserGender'] = encoder.fit_transform(df['UserGender'])
+
+# Define your input data
+X = [df['UserAge'], df['UserGender'], topics_pad]
+
+# Load your trained model (replace 'model.h5' with your actual model file)
+# You need to provide custom_objects to handle the custom optimizer
+model = load_model('model.h5', custom_objects={'CustomAdamOptimizer': 'adam'})
 
 # Define a range of threshold values
 threshold_values = np.arange(0.1, 1.1, 0.1)
@@ -17,9 +36,9 @@ threshold_to_topics = {}
 
 # Iterate through threshold values
 for threshold in threshold_values:
-    # Apply the threshold to the model's output (replace with your actual model prediction code)
-    predicted_scores = model.predict(input_data)  # Replace input_data with actual input
-    recommended_topics = [topic for topic, score in topic_scores.items() if score >= threshold]
+    # Apply the threshold to the model's output
+    predicted_scores = model.predict(X)
+    recommended_topics = [topic for topic, score in zip(df['LikedTopics'], predicted_scores) if score >= threshold]
 
     # Store the threshold value and recommended topics
     threshold_to_topics[threshold] = recommended_topics
