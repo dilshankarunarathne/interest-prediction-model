@@ -99,3 +99,9 @@ This work is licensed under a
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 ## Contact Information
+
+For questions or feedback, please contact the author:
+
+- Author: Dilshan M. Karunarathne
+- Email: ceo@altier.tech
+- Website: http://altier.tech
