@@ -1,12 +1,42 @@
-# Ad Topic Recommendation System [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+# Ad Topic Recommendation System 
  An AI model for suggesting interested topics for social media advertising, based on the user's age and gender.
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa] 
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
 ## Table of Contents
+
+
+
+[![Version](https://img.shields.io/badge/version-0.1-brightgreen.svg)](https://pypi.org/project/ad-topic-recommender/)
+[![License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-blue.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Command Line Interface](#command-line-interface)
+  - [Python Library](#python-library)
+- [Example](#example)
+- [Dependencies](#dependencies)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact Information](#contact-information)
+
+## Introduction
+
+The `ad_topic_recommender` package is a simple tool that recommends interesting topics based on a person's age and gender. This documentation provides information on how to install and use the package, along with examples and other relevant details.
+
+## Installation
+
+You can install the `ad_topic_recommender` package using pip:
+
+```bash
+pip install ad-topic-recommender
