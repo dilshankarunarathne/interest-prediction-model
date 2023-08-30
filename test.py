@@ -17,18 +17,21 @@ def recommend_topic(model, user_age, user_gender):
     user_age_input = np.array([[user_age]])
     user_gender_input = np.array([[user_gender]])
 
-    # Generate dummy topics data (you can replace this with actual topics)
-    num_topics = 50  # Adjust this based on your dataset
+    # Get all unique topics from the dataset
+    topics = df['LikedTopic'].unique()
+
+    # Generate dummy topics data with all zeros
+    num_topics = len(topics)
     dummy_topics = np.zeros((1, num_topics))  # Placeholder for topics data
 
     # Use the model to predict topic scores
     topic_scores = model.predict([user_age_input, user_gender_input, dummy_topics])
 
-    # Assuming you have a list of topics, you can select the topic with the highest score
-    topics = ["Topic 1", "Topic 2", "Topic 3", ...]  # Replace with your actual topics
-    recommended_topic_data = topics[np.argmax(topic_scores)]
+    # Get the recommended topic based on the highest score
+    recommended_topic_index = np.argmax(topic_scores)
+    recommended_topic = topics[recommended_topic_index]
 
-    return recommended_topic_data
+    return recommended_topic
 
 
 # Example usage:
