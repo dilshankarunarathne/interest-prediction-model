@@ -12,4 +12,6 @@ setup(
         "pandas~=2.0.3",
         "tensorflow~=2.13.0"
     ],
+    python_requires=">=3.6",
+    
 )
