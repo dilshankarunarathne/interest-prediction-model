@@ -1,45 +1,74 @@
 import pandas as pd
 import numpy as np
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.layers import Input, Embedding, Flatten, Concatenate, Dense
+from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import load_model
 
 # Load your dataset
 df = pd.read_csv('generated_dataset.csv')
 
-# Load your trained Keras model
-model = load_model('model.h5')
+# Encode categorical variables
+df['UserGender'] = df['UserGender'].map({'M': 0, 'F': 1})
 
+# Tokenize and pad liked topics
+max_topics_length = 50
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(df['LikedTopic'])
+topics_seq = tokenizer.texts_to_sequences(df['LikedTopic'])
+topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
 
-# Define a function to recommend a topic for a user
-def recommend_topic(model, user_age, user_gender):
-    # Ensure user_age is an integer
-    user_age_input = np.array([[user_age]], dtype=int)
+# Split the data
+X_age = df['UserAge'].values
+X_gender = df['UserGender'].values
+X_topics = topics_pad
+y = np.ones(len(df))  # Binary label: 1 for 'liked', assuming all entries are liked
 
-    # Ensure user_gender is encoded as 0 for male and 1 for female
-    user_gender_input = np.array([[0 if user_gender == "M" else 1]], dtype=int)
+# Split the data into train and test sets
+X_age_train, X_age_test, X_gender_train, X_gender_test, X_topics_train, X_topics_test, y_train, y_test = train_test_split(
+    X_age, X_gender, X_topics, y, test_size=0.2, random_state=42)
 
-    # Get all unique topics from the dataset
-    topics = df['LikedTopic'].unique()
+# Define the model
+input_age = Input(shape=(1,), name='age_input')
+input_gender = Input(shape=(1,), name='gender_input')
+input_topics = Input(shape=(max_topics_length,), name='topics_input')
 
-    # Ensure the number of topics matches the model's input shape (50 topics)
-    num_topics = 50  # Update this to match your model's input shape
-    dummy_topics = np.zeros((1, num_topics))  # Placeholder for topics data
+embedding_topics = Embedding(input_dim=len(tokenizer.word_index) + 1, output_dim=16)(input_topics)
+flatten_topics = Flatten()(embedding_topics)
 
-    # Use the model to predict topic scores
-    topic_scores = model.predict([user_age_input, user_gender_input, dummy_topics])
+concatenated = Concatenate()([input_age, input_gender, flatten_topics])
+output = Dense(1, activation='sigmoid')(concatenated)
 
-    # Get the recommended topic index based on the highest score
-    recommended_topic_index = np.argmax(topic_scores)
-    recommended_topic_data = topics[recommended_topic_index]
+model = Model(inputs=[input_age, input_gender, input_topics], outputs=output)
 
-    return recommended_topic_data
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 
+# Train the model
+model.fit(
+    {'age_input': X_age_train, 'gender_input': X_gender_train, 'topics_input': X_topics_train},
+    y_train,
+    epochs=10,
+    batch_size=64,
+    validation_split=0.2
+)
 
-# Example usage:
-age_input = input("Enter user's age: ")
-gender_input = input("Enter user's gender (M/F): ")
+# Evaluate the model
+loss, accuracy = model.evaluate(
+    {'age_input': X_age_test, 'gender_input': X_gender_test, 'topics_input': X_topics_test},
+    y_test
+)
+print(f'Test loss: {loss:.4f}, Test accuracy: {accuracy:.4f}')
 
-recommended_topic = recommend_topic(model, age_input, gender_input)
+# Make recommendations for a new user (adjust input_data accordingly)
+input_data = {
+    'age_input': np.array([30]),
+    'gender_input': np.array([0]),  # 0 for Male, 1 for Female
+    'topics_input': np.array([topics_seq[0]])  # Replace with a user's liked topics
+}
+recommendation = model.predict(input_data)
+print(f'Recommendation: {recommendation[0][0]}')
 
-print(f"Recommended topic for user: {recommended_topic}")
+# Save the model
+model.save('model_revised.h5')
