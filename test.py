@@ -10,8 +10,8 @@ df = pd.read_csv('generated_dataset.csv')
 # Preprocess the data
 max_topics_length = 50
 tokenizer = Tokenizer()
-tokenizer.fit_on_texts(df['LikedTopics'])
-topics_seq = tokenizer.texts_to_sequences(df['LikedTopics'])
+tokenizer.fit_on_texts(df['LikedTopic'])
+topics_seq = tokenizer.texts_to_sequences(df['LikedTopic'])
 topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
 
 # Load your trained Keras model (replace 'model.h5' with the path to your actual model file)
