@@ -1,9 +1,11 @@
 import numpy as np
+import pandas as pd
 from tensorflow.python.keras.models import load_model
 
 # Load your dataset and model (replace with your actual dataset and model loading code)
-input_data = np.load('generated_dataset.csv')
 model = load_model('model.h5')
+df = pd.read_csv('generated_dataset.csv')
+
 
 # Define a range of threshold values
 threshold_values = np.arange(0.1, 1.1, 0.1)
