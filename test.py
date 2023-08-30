@@ -1,6 +1,8 @@
 import numpy as np
 
 # Load your dataset and model (replace with your actual dataset and model loading code)
+input_data = np.load('input_data.npy')
+model = load_model('model.h5')
 
 # Define a range of threshold values
 threshold_values = np.arange(0.1, 1.1, 0.1)
