@@ -1,14 +1,11 @@
-import numpy as np
 import pandas as pd
+import numpy as np
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import load_model
 
 # Load your dataset (replace 'your_dataset.csv' with your actual dataset)
-df = pd.read_csv('generated_dataset.csv')
+df = pd.read_csv('your_dataset.csv')
 
 # Preprocess the data
 max_topics_length = 50
@@ -17,32 +14,24 @@ tokenizer.fit_on_texts(df['LikedTopics'])
 topics_seq = tokenizer.texts_to_sequences(df['LikedTopics'])
 topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
 
-# Encode UserGender
-encoder = LabelEncoder()
-df['UserGender'] = encoder.fit_transform(df['UserGender'])
+# Load your trained Keras model (replace 'model.h5' with the path to your actual model file)
+model = load_model('model.h5')
 
-# Define your input data
-X = [df['UserAge'], df['UserGender'], topics_pad]
+# Define input data for making predictions
+X_user_age = df['UserAge']
+X_user_gender = df['UserGender']
+X_topics = topics_pad
 
-# Load your trained model (replace 'model.h5' with your actual model file)
-# You need to provide custom_objects to handle the custom optimizer
-model = load_model('model.h5', custom_objects={'CustomAdamOptimizer': 'adam'})
+# Make predictions using the model
+predicted_scores = model.predict([X_user_age, X_user_gender, X_topics])
 
-# Define a range of threshold values
-threshold_values = np.arange(0.1, 1.1, 0.1)
+# Define a threshold value for recommendations (adjust as needed)
+threshold = 0.5
 
-# Initialize an empty dictionary to store results (threshold value => recommended topics)
-threshold_to_topics = {}
+# Get recommended topics based on the threshold
+recommended_topics = [topic for i, topic in enumerate(df['LikedTopics']) if predicted_scores[i] >= threshold]
 
-# Iterate through threshold values
-for threshold in threshold_values:
-    # Apply the threshold to the model's output
-    predicted_scores = model.predict(X)
-    recommended_topics = [topic for topic, score in zip(df['LikedTopics'], predicted_scores) if score >= threshold]
-
-    # Store the threshold value and recommended topics
-    threshold_to_topics[threshold] = recommended_topics
-
-# Print the results
-for threshold, topics in threshold_to_topics.items():
-    print(f'Threshold: {threshold}, Recommended Topics: {topics}')
+# Print the recommended topics
+print("Recommended Topics:")
+for topic in recommended_topics:
+    print(topic)
