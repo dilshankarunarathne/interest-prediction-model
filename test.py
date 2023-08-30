@@ -20,7 +20,7 @@ tokenizer.fit_on_texts(df['LikedTopic'])
 topics_seq = tokenizer.texts_to_sequences(df['LikedTopic'])
 topics_pad = pad_sequences(topics_seq, maxlen=max_topics_length)
 
-# Load your trained Keras model 
+# Load your trained Keras model
 model = load_model('model.h5')
 
 # Define input data for making predictions
@@ -35,7 +35,7 @@ predicted_scores = model.predict([X_user_age, X_user_gender, X_topics])
 threshold = 0.5
 
 # Get recommended topics based on the threshold
-recommended_topics = [topic for i, topic in enumerate(df['LikedTopics']) if predicted_scores[i] >= threshold]
+recommended_topics = [topic for i, topic in enumerate(df['LikedTopic']) if predicted_scores[i] >= threshold]
 
 # Print the recommended topics
 print("Recommended Topics:")
