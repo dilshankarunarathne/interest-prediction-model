@@ -4,8 +4,14 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
 
-# Load your dataset (replace 'your_dataset.csv' with your actual dataset)
+# Load your dataset 
 df = pd.read_csv('generated_dataset.csv')
+
+# Ensure User Age is numeric
+df['UserAge'] = pd.to_numeric(df['UserAge'], errors='coerce')  # 'coerce' will handle non-numeric values
+
+# Encode User Gender (assuming 'M' is 0 and 'F' is 1)
+df['UserGender'] = df['UserGender'].map({'M': 0, 'F': 1})
 
 # Preprocess the data
 max_topics_length = 50
