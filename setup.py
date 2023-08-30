@@ -6,6 +6,7 @@ setup(
     packages=find_packages(),
     install_requires=[
         "joblib~=1.3.2",
+        "numpy~=1.24.2",
         
     ],
 )
