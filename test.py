@@ -8,15 +8,7 @@ model = joblib.load('model.joblib')
 
 # Try to load the label encoder, or use a default one if not found
 label_encoder_path = 'label_encoder.joblib'
-if os.path.exists(label_encoder_path):
-    label_encoder = joblib.load(label_encoder_path)
-else:
-    # Create a default label encoder (assuming you know the classes in advance)
-    from sklearn.preprocessing import LabelEncoder
-
-    label_encoder = LabelEncoder()
-    label_encoder.classes_ = ['art', 'books', 'business', 'fashion', 'food', 'movies', 'music', 'science', 'sports',
-                              'technology', 'travel', 'video games']
+label_encoder = joblib.load(label_encoder_path)
 
 
 # Function to recommend a topic based on user's age and gender
