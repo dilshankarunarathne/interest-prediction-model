@@ -31,6 +31,17 @@ You can install the `ad_topic_recommender` package using pip:
 pip install ad-topic-recommender
 ```
 
+Usage
+Command Line Interface
+The package provides a command-line interface (CLI) for easy topic recommendations. You can use it as follows:
+
+
+
+
+
+
+
+
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]  
