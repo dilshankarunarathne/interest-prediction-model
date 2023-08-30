@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.layers import Input, Embedding, Flatten, Concatenate, Dense
+from tensorflow.keras.layers import Input, Embedding, Flatten, Concatenate, Dense, LSTM
 from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -35,9 +35,9 @@ input_gender = Input(shape=(1,), name='gender_input')
 input_topics = Input(shape=(max_topics_length,), name='topics_input')
 
 embedding_topics = Embedding(input_dim=len(tokenizer.word_index) + 1, output_dim=16)(input_topics)
-flatten_topics = Flatten()(embedding_topics)
+lstm_topics = LSTM(16)(embedding_topics)
 
-concatenated = Concatenate()([input_age, input_gender, flatten_topics])
+concatenated = Concatenate()([input_age, input_gender, lstm_topics])
 output = Dense(1, activation='sigmoid')(concatenated)
 
 model = Model(inputs=[input_age, input_gender, input_topics], outputs=output)
