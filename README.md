@@ -1,12 +1,8 @@
-# Ad Topic Recommendation System
+# Ad Topic Recommendation System [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
  An AI model for suggesting interested topics for social media advertising, based on the user's age and gender.
- This project uses Creative Commons Non-Commercial International license. 
-
-Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
-
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
