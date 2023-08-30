@@ -20,4 +20,6 @@ setup(
     },
     author="Dilshan M. Karunarathne",
     author_email="ceo@altier.tech",
+    description="A simple ad topic recommender",
+    
 )
