@@ -14,7 +14,7 @@ def recommend_topic(age, gender):
     """
 
     :param age: age of the user
-    :param gender:
+    :param gender: 
     :return:
     """
     user_gender_encoded = label_encoder.transform([gender])
