@@ -11,6 +11,9 @@ from tensorflow.keras.utils import to_categorical
 # Load your dataset
 df = pd.read_csv('generated_dataset.csv')
 
+# Create a label encoder
+label_encoder = LabelEncoder()
+
 # Encode categorical variables
 df['UserGender'] = df['UserGender'].map({'M': 0, 'F': 1})
 
