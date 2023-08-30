@@ -22,6 +22,7 @@ This work is licensed under a
 10. [Contributors](#contributors)
 
 ## Introduction
+
 This document provides an overview of an AI model designed to recommend topics of interest based on a 
 person's age and gender. The model utilizes a Decision Tree Classifier to make topic recommendations. 
 The following sections detail the dataset used, data preprocessing, model development, results, and conclusions.
