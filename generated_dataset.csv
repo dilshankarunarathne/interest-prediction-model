@@ -1,0 +1,567 @@
+UserID,UserAge,UserGender,LikedTopic
+1,23,M,sports
+2,45,F,fashion
+3,19,M,music
+4,37,F,travel
+5,53,M,food
+6,21,F,technology
+7,49,M,business
+8,17,F,art
+9,35,M,books
+10,51,F,video games
+11,27,M,movies
+12,43,F,science
+13,15,M,politics
+14,31,F,animals
+15,57,M,health
+16,29,F,news
+17,47,M,education
+18,13,F,environment
+19,39,M,history
+20,55,F,philosophy
+21,22,M,cooking
+22,44,F,gaming
+23,18,M,social media
+24,36,F,humor
+25,52,M,religion
+26,20,F,fashion
+27,48,M,sports
+28,16,F,travel
+29,34,M,food
+30,50,F,technology
+31,26,M,business
+32,42,F,art
+33,14,M,books
+34,32,F,video games
+35,56,M,movies
+36,28,F,science
+37,46,M,politics
+38,12,F,animals
+39,30,M,health
+40,54,F,news
+41,25,M,education
+42,41,F,environment
+43,11,M,history
+44,33,F,philosophy
+45,59,M,cooking
+46,24,F,gaming
+47,10,M,social media
+48,38,F,humor
+49,58,M,religion
+50,23,F,fashion
+51,45,M,sports
+52,19,F,travel
+53,37,M,food
+54,53,F,technology
+55,21,F,business
+56,49,M,art
+57,17,F,books
+58,35,M,video games
+59,51,F,movies
+101,34,M,music
+102,56,F,fashion
+103,20,M,sports
+104,42,F,travel
+105,64,M,food
+106,22,F,technology
+107,44,M,business
+108,18,F,art
+109,36,M,books
+110,52,F,video games
+111,28,M,movies
+112,46,F,science
+113,16,M,politics
+114,34,F,animals
+115,50,M,health
+116,26,F,news
+117,42,M,education
+118,14,F,environment
+119,32,M,history
+120,56,F,philosophy
+121,30,M,cooking
+122,48,F,gaming
+123,12,M,social media
+124,30,F,humor
+125,54,M,religion
+126,28,F,fashion
+127,46,M,sports
+128,14,F,travel
+129,32,M,food
+130,58,F,technology
+131,24,F,business
+132,42,M,art
+133,10,M,books
+134,38,F,video games
+135,56,M,movies
+136,22,F,science
+137,40,M,politics
+138,18,F,animals
+139,36,M,health
+140,54,F,news
+141,20,M,education
+142,38,F,environment
+143,16,M,history
+144,34,F,philosophy
+145,50,M,cooking
+146,26,F,gaming
+147,12,M,social media
+148,30,F,humor
+149,58,M,religion
+150,50,F,music
+151,72,M,fashion
+152,36,M,sports
+153,58,F,travel
+154,80,M,food
+155,38,F,technology
+156,60,M,business
+157,34,F,art
+158,52,M,books
+159,74,F,video games
+160,40,M,movies
+161,62,F,science
+162,28,M,politics
+163,46,F,animals
+164,70,M,health
+165,36,F,news
+166,58,M,education
+167,24,F,environment
+168,42,M,history
+169,76,F,philosophy
+170,40,M,cooking
+171,68,F,gaming
+172,26,M,social media
+173,44,F,humor
+174,78,M,religion
+175,32,F,fashion
+176,54,M,sports
+177,28,F,travel
+178,46,M,food
+179,70,F,technology
+180,34,F,business
+181,52,M,art
+182,20,F,books
+183,48,M,video games
+184,72,F,movies
+185,38,M,science
+186,60,F,politics
+187,24,M,animals
+188,42,F,health
+189,74,M,news
+190,30,F,education
+191,58,M,environment
+192,26,F,history
+193,44,M,philosophy
+194,76,F,cooking
+195,32,M,gaming
+196,20,F,social media
+197,48,F,humor
+198,78,M,religion
+199,28,M,technology
+200,35,F,travel
+201,22,M,food and cooking
+202,40,M,sports
+203,29,F,fashion
+204,24,M,movies
+205,31,F,music
+206,26,M,science
+207,33,F,fitness
+208,27,M,books
+209,38,F,art and design
+210,23,M,gaming
+211,30,F,health and wellness
+212,36,M,politics
+213,25,F,diy and crafts
+214,29,M,travel
+215,32,F,technology
+216,39,M,food and cooking
+217,21,F,sports
+218,34,M,fashion
+219,45,M,travel
+220,57,F,photography
+221,43,M,music
+222,51,M,science
+223,60,F,health and wellness
+224,19,F,books
+225,48,M,food and cooking
+226,50,F,art and design
+227,56,M,politics
+228,63,F,diy and crafts
+229,15,M,gaming
+230,47,F,travel
+231,52,M,technology
+232,59,F,music
+233,13,M,sports
+234,42,M,fashion
+235,44,F,fitness
+236,49,M,books
+237,65,F,science
+238,20,M,health and wellness
+239,55,F,art and design
+240,46,M,movies
+241,54,F,diy and crafts
+242,16,M,politics
+243,61,F,travel
+244,53,M,food and cooking
+245,58,F,technology
+246,14,M,sports
+247,41,F,fashion
+248,62,M,music
+249,37,M,science
+250,64,F,books
+251,18,M,health and wellness
+252,31,F,art and design
+253,27,M,gaming
+254,33,F,food and cooking
+255,40,M,politics
+256,24,F,travel
+257,22,M,technology
+258,35,F,sports
+259,38,M,fashion
+260,29,F,fitness
+261,43,M,books
+262,26,F,science
+263,47,M,health and wellness
+264,34,F,diy and crafts
+265,21,M,gaming
+266,55,F,travel
+267,42,M,technology
+268,44,F,music
+269,49,M,sports
+270,65,F,fashion
+271,20,M,food and cooking
+272,56,F,art and design
+273,46,M,movies
+274,54,F,diy and crafts
+275,16,M,politics
+276,61,F,travel
+277,53,M,technology
+278,58,F,books
+279,14,M,sports
+280,41,F,fitness
+281,62,M,food and cooking
+282,37,M,politics
+283,64,F,health and wellness
+284,18,M,art and design
+285,31,F,gaming
+286,27,M,travel
+287,33,F,science
+288,40,M,technology
+289,24,F,sports
+290,22,M,fashion
+291,35,F,fitness
+292,38,M,books
+293,29,F,health and wellness
+294,43,M,art and design
+295,26,F,diy and crafts
+296,47,M,travel
+297,34,F,music
+298,21,M,gaming
+299,55,F,food and cooking
+299,28,M,technology
+300,35,F,travel
+301,22,M,food and cooking
+302,40,M,sports
+303,29,F,fashion
+304,24,M,movies
+305,31,F,music
+306,26,M,science
+307,33,F,fitness
+308,27,M,books
+309,38,F,art and design
+310,23,M,gaming
+311,30,F,health and wellness
+312,36,M,politics
+313,25,F,diy and crafts
+314,29,M,travel
+315,32,F,technology
+316,39,M,food and cooking
+317,21,F,sports
+318,34,M,fashion
+319,45,M,travel
+320,57,F,photography
+321,43,M,music
+322,51,M,science
+323,60,F,health and wellness
+324,19,F,books
+325,48,M,food and cooking
+326,50,F,art and design
+327,56,M,politics
+328,63,F,diy and crafts
+329,15,M,gaming
+330,47,F,travel
+331,52,M,technology
+332,59,F,music
+333,13,M,sports
+334,42,M,fashion
+335,44,F,fitness
+336,49,M,books
+337,65,F,science
+338,20,M,health and wellness
+339,55,F,art and design
+340,46,M,movies
+341,54,F,diy and crafts
+342,16,M,politics
+343,61,F,travel
+344,53,M,food and cooking
+345,58,F,technology
+346,14,M,sports
+347,41,F,fashion
+348,62,M,music
+349,37,M,science
+350,64,F,books
+351,18,M,health and wellness
+352,31,F,art and design
+353,27,M,gaming
+354,33,F,food and cooking
+355,40,M,politics
+356,24,F,travel
+357,22,M,technology
+358,35,F,sports
+359,38,M,fashion
+360,29,F,fitness
+361,43,M,books
+362,26,F,science
+363,47,M,health and wellness
+364,34,F,diy and crafts
+365,21,M,gaming
+366,55,F,travel
+367,42,M,technology
+368,44,F,music
+369,49,M,sports
+370,65,F,fashion
+371,20,M,food and cooking
+372,56,F,art and design
+373,46,M,movies
+374,54,F,diy and crafts
+375,16,M,politics
+376,61,F,travel
+377,53,M,technology
+378,58,F,books
+379,14,M,sports
+380,41,F,fitness
+381,62,M,food and cooking
+382,37,M,politics
+383,64,F,health and wellness
+384,18,M,art and design
+385,31,F,gaming
+386,27,M,travel
+387,33,F,science
+388,40,M,technology
+389,24,F,sports
+390,22,M,fashion
+391,35,F,fitness
+392,38,M,books
+393,29,F,health and wellness
+394,43,M,art and design
+395,26,F,diy and crafts
+396,47,M,travel
+397,34,F,music
+398,21,M,gaming
+399,55,F,food and cooking
+400,28,M,technology
+401,35,F,travel
+402,22,M,food and cooking
+403,40,M,sports
+404,29,F,fashion
+405,24,M,movies
+406,31,F,music
+407,26,M,science
+408,33,F,fitness
+409,27,M,books
+410,38,F,art and design
+411,23,M,gaming
+412,30,F,health and wellness
+413,36,M,politics
+414,25,F,diy and crafts
+415,29,M,travel
+416,32,F,technology
+417,39,M,food and cooking
+418,21,F,sports
+419,34,M,fashion
+420,45,M,travel
+421,57,F,photography
+422,43,M,music
+423,51,M,science
+424,60,F,health and wellness
+425,19,F,books
+426,48,M,food and cooking
+427,50,F,art and design
+428,56,M,politics
+429,63,F,diy and crafts
+430,15,M,gaming
+431,47,F,travel
+432,52,M,technology
+433,59,F,music
+434,13,M,sports
+435,42,M,fashion
+436,44,F,fitness
+437,49,M,books
+438,65,F,science
+439,20,M,health and wellness
+440,55,F,art and design
+441,46,M,movies
+442,54,F,diy and crafts
+443,16,M,politics
+444,61,F,travel
+445,53,M,food and cooking
+446,58,F,technology
+447,14,M,sports
+448,41,F,fashion
+449,62,M,music
+450,37,M,science
+451,64,F,books
+452,18,M,health and wellness
+453,31,F,art and design
+454,27,M,gaming
+455,33,F,food and cooking
+456,40,M,politics
+457,24,F,travel
+458,22,M,technology
+459,35,F,sports
+460,38,M,fashion
+461,29,F,fitness
+462,43,M,books
+463,26,F,science
+464,47,M,health and wellness
+465,34,F,diy and crafts
+466,21,M,gaming
+467,55,F,travel
+468,42,M,technology
+469,44,F,music
+470,49,M,sports
+471,65,F,fashion
+472,20,M,food and cooking
+473,56,F,art and design
+474,46,M,movies
+475,54,F,diy and crafts
+476,16,M,politics
+477,61,F,travel
+478,53,M,technology
+479,58,F,books
+480,14,M,sports
+481,41,F,fitness
+482,62,M,food and cooking
+483,37,M,politics
+484,64,F,health and wellness
+485,18,M,art and design
+486,31,F,gaming
+487,27,M,travel
+488,33,F,science
+489,40,M,technology
+490,24,F,sports
+491,22,M,fashion
+492,35,F,fitness
+493,38,M,books
+494,28,M,technology
+495,35,F,travel
+496,22,M,food and cooking
+497,40,M,sports
+498,29,F,fashion
+499,24,M,movies
+500,31,F,music
+501,26,M,science
+502,33,F,fitness
+503,27,M,books
+504,38,F,art and design
+505,23,M,gaming
+506,30,F,health and wellness
+507,36,M,politics
+508,25,F,diy and crafts
+509,29,M,travel
+510,32,F,technology
+511,39,M,food and cooking
+512,21,F,sports
+513,34,M,fashion
+514,45,M,travel
+515,57,F,photography
+516,43,M,music
+517,51,M,science
+518,60,F,health and wellness
+519,19,F,books
+520,48,M,food and cooking
+521,50,F,art and design
+522,56,M,politics
+523,63,F,diy and crafts
+524,15,M,gaming
+525,47,F,travel
+526,52,M,technology
+527,59,F,music
+528,13,M,sports
+529,42,M,fashion
+530,44,F,fitness
+531,49,M,books
+532,65,F,science
+533,20,M,health and wellness
+534,55,F,art and design
+535,46,M,movies
+536,54,F,diy and crafts
+537,16,M,politics
+538,61,F,travel
+539,53,M,food and cooking
+540,58,F,technology
+541,14,M,sports
+542,41,F,fashion
+543,62,M,music
+544,37,M,science
+545,64,F,books
+546,18,M,health and wellness
+547,31,F,art and design
+548,27,M,gaming
+549,33,F,food and cooking
+550,40,M,politics
+551,24,F,travel
+552,22,M,technology
+553,35,F,sports
+554,38,M,fashion
+555,29,F,fitness
+556,43,M,books
+557,26,F,science
+558,47,M,health and wellness
+559,34,F,diy and crafts
+560,21,M,gaming
+561,55,F,travel
+562,42,M,technology
+563,44,F,music
+564,49,M,sports
+565,65,F,fashion
+566,20,M,food and cooking
+567,56,F,art and design
+568,46,M,movies
+569,54,F,diy and crafts
+570,16,M,politics
+571,61,F,travel
+572,53,M,technology
+573,58,F,books
+574,14,M,sports
+575,41,F,fitness
+576,62,M,food and cooking
+577,37,M,politics
+578,64,F,health and wellness
+579,18,M,art and design
+580,31,F,gaming
+581,27,M,travel
+582,33,F,science
+583,40,M,technology
+584,24,F,sports
+585,22,M,fashion
+586,35,F,fitness
+587,38,M,books
+588,29,F,health and wellness
+589,43,M,art and design
+590,26,F,diy and crafts
+591,47,M,travel
+592,34,F,music
+593,21,M,gaming
+594,55,F,food and cooking
+595,28,M,technology
+596,35,F,travel
+597,22,M,food and cooking
+598,40,M,sports
+599,29,F,fashion
+600,24,M,movies
+
+
+
+
+
+
