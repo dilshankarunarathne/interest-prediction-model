@@ -1,6 +1,5 @@
-import joblib
-import os
 import warnings
+import joblib
 import numpy as np
 
 # Load the trained model
