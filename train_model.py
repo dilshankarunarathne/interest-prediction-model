@@ -4,8 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Embedding, LSTM, Dense
+from tensorflow.keras.models import Sequential, Model
+from tensorflow.keras.layers import Embedding, LSTM, Dense, Input
 from tensorflow.keras.utils import to_categorical
 
 # Load your dataset
@@ -33,10 +33,16 @@ X_age_train, X_age_test, X_gender_train, X_gender_test, X_topics_train, X_topics
     X_age, X_gender, X_topics, y, test_size=0.2, random_state=42)
 
 # Define the model
-model = Sequential()
-model.add(Embedding(input_dim=len(tokenizer.word_index) + 1, output_dim=16, input_length=max_topics_length))
-model.add(LSTM(16))
-model.add(Dense(len(label_encoder.classes_), activation='softmax'))
+input_age = Input(shape=(1,), name='age_input')
+input_gender = Input(shape=(1,), name='gender_input')
+input_topics = Input(shape=(max_topics_length,), name='topics_input')
+
+embedding = Embedding(input_dim=len(tokenizer.word_index) + 1, output_dim=16, input_length=max_topics_length)(input_topics)
+lstm = LSTM(16)(embedding)
+concatenated = concatenate([lstm, input_age, input_gender])
+output = Dense(len(label_encoder.classes_), activation='softmax')(concatenated)
+
+model = Model(inputs=[input_age, input_gender, input_topics], outputs=output)
 
 # Compile the model
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
