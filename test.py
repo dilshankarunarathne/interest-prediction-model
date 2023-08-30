@@ -47,12 +47,12 @@ def recommend_topic(model, user_age, user_gender):
 age_input = input("Enter user's age: ")
 gender_input = input("Enter user's gender (M/F): ")
 
-recommended_topics = recommend_topic(model, age_input, gender_input)
+recommended_topic = recommend_topic(model, age_input, gender_input)
+formatted_topic = format_topic(recommended_topic)
 
-
-if recommended_topics:
+if recommended_topic:
     print("Recommended Topics:")
-    for topic in recommended_topics:
+    for topic in recommended_topic:
         print(topic)
 else:
     print("No topics recommended.")
