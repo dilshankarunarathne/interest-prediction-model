@@ -1,11 +1,11 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="ad-topic-suggestion-model",
+    name="ad_topic_recommender",
     version="0.1",
     packages=find_packages(),
     package_data={
-        "ad_recommender_model": ["*.joblib"],
+        "": ["*.joblib"],
     },
     install_requires=[
         "joblib~=1.3.2",
