@@ -7,6 +7,8 @@ model = load_model('model.h5')
 
 # Load the input data
 df = pd.read_csv('generated_dataset.csv')
+# this should be named as input_data
+input_data = df.values
 
 # Define a range of threshold values
 threshold_values = np.arange(0.1, 1.1, 0.1)
