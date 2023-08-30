@@ -1,4 +1,5 @@
 import joblib
+import os
 
 # Load the trained model
 model = joblib.load('model.joblib')
