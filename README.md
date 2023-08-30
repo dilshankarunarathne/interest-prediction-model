@@ -41,7 +41,8 @@ The package provides a command-line interface (CLI) for easy topic recommendatio
 ad_topic_recommender --age <age> --gender <gender>
 ```
 
-
+Replace <age> with the person's age and <gender> with their gender (e.g., "male" or "female"). 
+The CLI will then print out a recommended topic.
 
 
 
