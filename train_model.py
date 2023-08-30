@@ -14,6 +14,9 @@ df = pd.read_csv('generated_dataset.csv')
 # Create a label encoder
 label_encoder = LabelEncoder()
 
+# Encode the 'LikedTopic' column into numerical labels
+df['TopicClass'] = label_encoder.fit_transform(df['LikedTopic'])
+
 # Encode categorical variables
 df['UserGender'] = df['UserGender'].map({'M': 0, 'F': 1})
 
