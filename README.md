@@ -11,3 +11,4 @@
 7. [References](#references)
 8. [License](#license)
 9. [Author Info](#author-info)
+10. [Contributors](#contributors)
