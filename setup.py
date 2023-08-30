@@ -24,7 +24,7 @@ setup(
     author="Dilshan M. Karunarathne",
     author_email="ceo@altier.tech",
     description="A simple ad topic recommender",
-    license="GNU GPLv3",
+    license="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
     keywords="ad topic recommender",
     url="http://www.altier.tech/"
 )
