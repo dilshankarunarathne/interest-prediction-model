@@ -24,5 +24,4 @@ setup(
     license="GNU GPLv3",
     keywords="ad topic recommender",
     url="http://www.altier.tech/"
-    
 )
