@@ -13,9 +13,11 @@ model = load_model('model.h5')
 
 # Define a function to recommend a topic for a user
 def recommend_topic(model, user_age, user_gender):
-    # Create input data for the model
-    user_age_input = np.array([[user_age]])
-    user_gender_input = np.array([[user_gender]])
+    # Ensure user_age is an integer
+    user_age_input = np.array([[user_age]], dtype=int)
+
+    # Ensure user_gender is encoded as 0 for male and 1 for female
+    user_gender_input = np.array([[0 if user_gender == "M" else 1]], dtype=int)
 
     # Get all unique topics from the dataset
     topics = df['LikedTopic'].unique()
