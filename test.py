@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 # Load your dataset
 df = pd.read_csv('generated_dataset.csv')
 
-# Load your trained Keras model 
+# Load your trained Keras model
 model = load_model('model.h5')
 
 
@@ -22,7 +22,7 @@ def recommend_topics(user_age, user_gender):
     # Preprocess the data for prediction
     max_topics_length = 50
     tokenizer = Tokenizer()
-    tokenizer.fit_on_texts(df['LikedTopics'])
+    tokenizer.fit_on_texts(df['LikedTopic'])
 
     # Create a dummy sequence for topics (you can modify this based on user input)
     dummy_topic_sequence = tokenizer.texts_to_sequences(['your_dummy_topic'])
@@ -35,7 +35,7 @@ def recommend_topics(user_age, user_gender):
     threshold = 0.5
 
     # Get recommended topics based on the threshold
-    recommended_topics = [topic for i, topic in enumerate(df['LikedTopics']) if predicted_scores[i][0] >= threshold]
+    recommended_topics = [topic for i, topic in enumerate(df['LikedTopic']) if predicted_scores[i][0] >= threshold]
 
     return recommended_topics
 
