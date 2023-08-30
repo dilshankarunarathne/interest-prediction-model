@@ -4,6 +4,9 @@ setup(
     name="ad_topic_recommender",
     version="0.1",
     packages=find_packages(),
+    package_data={
+
+    },
     install_requires=[
         "joblib~=1.3.2",
         "numpy~=1.24.2",
