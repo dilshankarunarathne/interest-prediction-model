@@ -23,7 +23,7 @@ def recommend_topic(model, user_age, user_gender):
     topics = df['LikedTopic'].unique()
 
     # Ensure the number of topics matches the model's input shape (50 topics)
-    num_topics = 50
+    num_topics = 31
     dummy_topics = np.zeros((1, num_topics))  # Placeholder for topics data
 
     # Use the model to predict topic scores
