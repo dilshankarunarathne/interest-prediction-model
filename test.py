@@ -11,7 +11,7 @@ df = pd.read_csv('generated_dataset.csv')
 model = load_model('model.h5')
 
 
-# Define a function to recommend topics for a user
+# Define a function to recommend a topic for a user
 def recommend_topic(model, user_age, user_gender):
     # Create input data for the model
     user_age_input = np.array([[user_age]])
@@ -20,8 +20,8 @@ def recommend_topic(model, user_age, user_gender):
     # Get all unique topics from the dataset
     topics = df['LikedTopic'].unique()
 
-    # Generate dummy topics data with all zeros
-    num_topics = len(topics)
+    # Ensure the number of topics matches the model's input shape (50 topics)
+    num_topics = 50
     dummy_topics = np.zeros((1, num_topics))  # Placeholder for topics data
 
     # Use the model to predict topic scores
@@ -35,10 +35,10 @@ def recommend_topic(model, user_age, user_gender):
 
 
 # Example usage:
-user_age_input = input("Enter user's age: ")
-user_gender_input = input("Enter user's gender (M/F): ")
+age_input = input("Enter user's age: ")
+gender_input = input("Enter user's gender (M/F): ")
 
-recommended_topics = recommend_topic(model, user_age_input, user_gender_input)
+recommended_topics = recommend_topic(model, age_input, gender_input)
 
 if recommended_topics:
     print("Recommended Topics:")
