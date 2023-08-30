@@ -49,6 +49,7 @@ gender_input = input("Enter user's gender (M/F): ")
 
 recommended_topics = recommend_topic(model, age_input, gender_input)
 
+
 if recommended_topics:
     print("Recommended Topics:")
     for topic in recommended_topics:
