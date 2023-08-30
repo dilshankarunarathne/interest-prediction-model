@@ -9,3 +9,4 @@
 5. [Results](#results)
 6. [Conclusion](#conclusion)
 7. [References](#references)
+8. [License](#license)
