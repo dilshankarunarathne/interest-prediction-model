@@ -37,6 +37,12 @@ pip install ad-topic-recommender
 
 The package provides a command-line interface (CLI) for easy topic recommendations. You can use it as follows:
 
+```bash
+ad_topic_recommender --age <age> --gender <gender>
+```
+
+
+
 
 
 
