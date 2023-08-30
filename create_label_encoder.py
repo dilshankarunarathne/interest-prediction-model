@@ -13,3 +13,4 @@ import joblib
 joblib.dump(label_encoder, 'label_encoder.joblib')
 
 print("LabelEncoder created and saved.")
+# TODO - this code actually wrecks the encoder saved during training
