@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from tensorflow.keras.models import load_model
 
 # Load your dataset (replace 'your_dataset.csv' with your actual dataset)
-df = pd.read_csv('your_dataset.csv')
+df = pd.read_csv('generated_dataset.csv')
 
 # Preprocess the data
 max_topics_length = 50
