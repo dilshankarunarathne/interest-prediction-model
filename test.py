@@ -32,7 +32,7 @@ X_topics = topics_pad
 predicted_scores = model.predict([X_user_age, X_user_gender, X_topics])
 
 # Define a threshold value for recommendations (adjust as needed)
-threshold = 0.5
+threshold = 0.5864432454109192
 
 # Get recommended topics based on the threshold
 recommended_topics = [topic for i, topic in enumerate(df['LikedTopic']) if predicted_scores[i] >= threshold]
